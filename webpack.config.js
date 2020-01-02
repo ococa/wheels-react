@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
   entry: {
     index: './lib/index.tsx',
   },
@@ -23,14 +22,5 @@ module.exports = {
         exclude: path.resolve(__dirname, 'node_modules')
       }
     ]
-  },
-  plugins: [new HtmlWebpackPlugin({
-    title: 'cuu',
-    template: 'index.html'
-  })],
-  devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    compress: true,
-    port: 9000
   },
 };
