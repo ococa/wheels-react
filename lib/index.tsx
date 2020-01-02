@@ -1,4 +1,8 @@
-console.log('123123123');
-const div = document.createElement('div');
-div.innerText = 'div-hh';
-document.body.appendChild(div);
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+ReactDOM.render(
+    <div>123</div>,
+    document.getElementById('root')
+)
+
