@@ -19,5 +19,10 @@ module.exports = {
         exclude: path.resolve(__dirname, 'node_modules')
       }
     ]
+  },
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 9000
   }
 };
