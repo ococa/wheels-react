@@ -6,8 +6,8 @@
   "author": "ococa",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.dev.js",
-    "build": "webpack --config webpack.config.prod.js"
+    "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js"
   },
   "dependencies": {
     "react": "^16.12.0",
@@ -17,6 +17,7 @@
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
     "awesome-typescript-loader": "^5.2.1",
+    "cross-env": "^6.0.3",
     "html-webpack-plugin": "^3.2.0",
     "typescript": "^3.7.4",
     "webpack": "^4.29.6",
