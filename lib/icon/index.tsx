@@ -1,5 +1,6 @@
 import * as React from 'react';
 import './importAllIcon';
+import propTypes from 'prop-types';
 
 
 interface IconProps {
@@ -19,6 +20,14 @@ const Icons: React.FunctionComponent<IconProps> = (props) => {
       </div>
     </div>
   );
+};
+
+Icons.propTypes = {
+  name: propTypes.string,
+};
+
+Icons.defaultProps = {
+  name: 'alipay'
 };
 
 export default Icons;
