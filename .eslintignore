@@ -1,2 +1,1 @@
-*.unit.*
-# /lib/icon.tsx
+*.test.*

@@ -10,19 +10,20 @@ interface IconProps extends React.SVGAttributes<SVGElement>{
 
 // <IconProps> Icon 接受一個參數 類型是IconProps
 const Icons: React.FunctionComponent<IconProps> = (props) => {
-  const { className, ...restProps } = props;
+  const { className, name,  ...restProps } = props;
   return (
     <svg
       className={classnames('icon', className)}
       {...restProps}
     >
-      <use xlinkHref={`#${props.name}`} />
+      <use xlinkHref={`#${name}`} />
     </svg>
   );
 };
 
 Icons.propTypes = {
   name: propTypes.string.isRequired,
+  className: propTypes.string,
 };
 
 Icons.defaultProps = {

@@ -17,8 +17,8 @@ ReactDOM.render(
     <Icons
       name={"wechat"}
       onClick={fn}
-      onMouseEnter={()=> { console.log('enter') }}
-      onMouseLeave={() => { console.log('leave') }}
+      onMouseEnter={()=> { console.log('enter'); }}
+      onMouseLeave={() => { console.log('leave'); }}
     />
     <Icons
       name={"alipay"}
