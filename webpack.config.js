@@ -19,6 +19,10 @@ module.exports = {
         loader: 'awesome-typescript-loader',
         include: path.resolve(__dirname, 'lib'),
         exclude: path.resolve(__dirname, 'node_modules')
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-sprite-loader',
       }
     ]
   },
