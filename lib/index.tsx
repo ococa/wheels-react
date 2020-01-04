@@ -4,5 +4,8 @@ import Button from './button';
 
 console.log(React);
 console.log(ReactDOM);
+export {
+    Button,
+}
 
 ReactDOM.render(<Button />, document.body);

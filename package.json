@@ -2,7 +2,8 @@
   "name": "cuu",
   "version": "0.0.1",
   "description": "react wheels",
-  "main": "lib/index.tsx",
+  "main": "dist/lib/index.js",
+  "types": "dist/lib/index.d.ts",
   "author": "ococa",
   "license": "MIT",
   "scripts": {
