@@ -13,7 +13,8 @@ module.exports = {
       },
     },
     moduleNameMapper: {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/__mocks__/file-mock.js",
+        "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/__mocks__/file-mock.js",
+        "\\.(scss|css|sass|less)$": "<rootDir>/test/__mocks__/object-mock.js",
     },
     testMatch: ['<rootDir>/**/__test__/**/.test.(js|jsx|ts|tsx)'],
     transform: {
