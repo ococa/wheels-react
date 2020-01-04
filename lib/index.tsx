@@ -14,8 +14,16 @@ const fn: React.MouseEventHandler<Element> = (e) => {
 
 ReactDOM.render(
   <div>
-    <Icons name={"wechat"} onClick={fn} />
-    <Icons name={"alipay"} />
+    <Icons
+      name={"wechat"}
+      onClick={fn}
+      onMouseEnter={()=> { console.log('enter') }}
+      onMouseLeave={() => { console.log('leave') }}
+    />
+    <Icons
+      name={"alipay"}
+      className={"!23"}
+    />
   </div>,
   document.querySelector('#root')
 );
