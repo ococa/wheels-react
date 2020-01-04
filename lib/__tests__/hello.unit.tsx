@@ -6,3 +6,11 @@ describe('我的第一个测试用例', () => {
         expect(add(1,2)).toEqual(3);
     })
 }) 
+
+
+
+describe('hhh', () => {
+    test('hello', () => {
+        expect(1).toEqual(2)
+    })
+})
