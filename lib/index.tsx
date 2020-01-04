@@ -8,9 +8,13 @@ export {
   Icons,
 };
 
+const fn: React.MouseEventHandler<Element> = (e) => {
+  console.log('e', e.target);
+};
+
 ReactDOM.render(
   <div>
-    <Icons name={"wechat"} />
+    <Icons name={"wechat"} onClick={fn} />
     <Icons name={"alipay"} />
   </div>,
   document.querySelector('#root')

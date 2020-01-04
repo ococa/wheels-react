@@ -6,16 +6,15 @@ import './index.scss';
 
 interface IconProps {
   name: string;
+  onClick?: React.MouseEventHandler<SVGElement>;
 }
 
 // <IconProps> Icon 接受一個參數 類型是IconProps
 const Icons: React.FunctionComponent<IconProps> = (props) => {
   return (
-    <div>
-      <svg className='icon'>
-        <use xlinkHref={`#${props.name}`} />
-      </svg>
-    </div>
+    <svg className='icon' onClick={props.onClick}>
+      <use xlinkHref={`#${props.name}`} />
+    </svg>
   );
 };
 
@@ -26,7 +25,7 @@ Icons.propTypes = {
 
 Icons.defaultProps = {
   name: 'alipay',
-  onClick: () => { console.log('default') },
+  onClick: () => {},
 };
 
 export default Icons;
