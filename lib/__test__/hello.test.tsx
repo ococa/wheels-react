@@ -7,10 +7,3 @@ describe('我的第一个测试用例', () => {
     })
 }) 
 
-
-
-describe('hhh', () => {
-    test('hello', () => {
-        expect(1).toEqual(2)
-    })
-})
