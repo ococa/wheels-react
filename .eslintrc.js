@@ -5,30 +5,33 @@ module.exports = {
         'plugin:@typescript-eslint/recommended'
     ], //使用推荐的React代码检测规范
     plugins: ['@typescript-eslint'],
-    env:{
+    env: {
         browser: true,
         node: true,
     },
     settings: {             //自动发现React的版本，从而进行规范react代码
-        "react": {
-            "pragma": "React",
-            "version": "detect"
+        'react': {
+            'pragma': 'React',
+            'version': 'detect'
         }
     },
     parserOptions: {        //指定ESLint可以解析JSX语法
-        "ecmaVersion": 2019,
-        "sourceType": 'module',
-        "ecmaFeatures":{
-            jsx:true
+        'ecmaVersion': 2019,
+        'sourceType': 'module',
+        'ecmaFeatures': {
+            jsx: true
         }
     },
     rules: {
         // 禁止使用 var
-        'no-var': "error",
+        'no-var': 'error',
         // 优先使用 interface 而不是 type
         '@typescript-eslint/consistent-type-definitions': [
-            "error",
-            "interface"
-        ]
+            'error',
+            'interface'
+        ],
+        'indent': ['error', 2],
+        'semi': ['error', 'always'],
+        'arrow-parens': 0
     }
 };
