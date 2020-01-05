@@ -1,9 +1,11 @@
 {
   "name": "cuu",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "react wheels",
   "main": "dist/lib/index.js",
-  "files": ["/dist"],
+  "files": [
+    "/dist"
+  ],
   "types": "dist/lib/index.d.ts",
   "author": "ococa",
   "license": "MIT",
