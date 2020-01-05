@@ -1,6 +1,6 @@
 {
   "name": "cuu",
-  "version": "0.0.2",
+  "version": "0.0.6",
   "description": "react wheels",
   "main": "dist/lib/index.js",
   "files": ["/dist"],
