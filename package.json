@@ -12,7 +12,7 @@
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
     "lint": "eslint lib --ext .ts,.tsx --ignore-path .eslintignore",
     "lintfix": "eslint lib --fix --ext .ts,.tsx --ignore-path .eslintignore",
-    "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml jest --config=jest.config.js --runInBand"
+    "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml jest --config=jest.config.js"
   },
   "dependencies": {
     "react": "^16.12.0",
