@@ -1,5 +1,6 @@
 # 一个ui组件库
-[![Build Status](https://travis-ci.org/ococa/wheels.svg?branch=master)](https://travis-ci.org/ococa/wheels)
+[![npm version](https://badge.fury.io/js/cuu.svg)](https://badge.fury.io/js/cuu)
+[![CircleCI](https://circleci.com/gh/ococa/wheels-react.svg?style=svg)](https://circleci.com/gh/ococa/wheels-react)
 作者：ococa
 
 ## 介绍
