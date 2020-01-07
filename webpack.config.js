@@ -10,14 +10,18 @@ module.exports = {
     libraryTarget: 'umd',
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx']
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    alias: {
+      'lib':  path.resolve(__dirname, 'lib'),
+      'example':  path.resolve(__dirname, 'example'),
+    }
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
         loader: 'awesome-typescript-loader',
-        include: path.resolve(__dirname, 'lib'),
+        include: [path.resolve(__dirname, 'lib'), path.resolve(__dirname, 'example')],
         exclude: path.resolve(__dirname, 'node_modules')
       },
       {

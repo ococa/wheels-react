@@ -9,7 +9,7 @@ interface IconProps extends React.SVGAttributes<SVGElement>{
 }
 
 // <IconProps> Icon 接受一個參數 類型是IconProps
-const Icons: React.FunctionComponent<IconProps> = (props) => {
+const Icon: React.FunctionComponent<IconProps> = (props) => {
   const { className, name,  ...restProps } = props;
   return (
     <svg
@@ -21,13 +21,13 @@ const Icons: React.FunctionComponent<IconProps> = (props) => {
   );
 };
 
-Icons.propTypes = {
+Icon.propTypes = {
   name: propTypes.string.isRequired,
   className: propTypes.string,
 };
 
-Icons.defaultProps = {
+Icon.defaultProps = {
   name: 'alipay',
 };
 
-export default Icons;
+export default Icon;
