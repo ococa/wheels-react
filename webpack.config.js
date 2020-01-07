@@ -14,6 +14,7 @@ module.exports = {
     alias: {
       'lib':  path.resolve(__dirname, 'lib'),
       'example':  path.resolve(__dirname, 'example'),
+      'theme': path.resolve(__dirname, 'lib/theme/theme.scss'),
     }
   },
   module: {

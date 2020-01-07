@@ -7,7 +7,9 @@ const DialogExample = () => {
   return (
     <div>
       <button onClick={() => setX(!x)}>!click</button>
-      <Dialog visible={x} />
+      <Dialog visible={x}>
+        hhhh
+      </Dialog>
     </div>
   )
 };
