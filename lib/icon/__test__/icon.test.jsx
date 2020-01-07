@@ -1,7 +1,7 @@
 import * as renderer from 'react-test-renderer';
 import React from 'react';
 import { mount } from 'enzyme';
-import Icon from '../index';
+import Icon from '../icon';
 
 describe('button', () => {
   it('是个 div', () => {
