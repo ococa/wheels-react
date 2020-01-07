@@ -1,8 +1,11 @@
 import React from 'react';
+import {Button} from 'lib/index';
 
 const ButtonExample: React.FunctionComponent = () => {
   return (
-    <div>button</div>
+    <div>
+      <Button type={'outlined'}>123</Button>
+    </div>
   )
 };
 
