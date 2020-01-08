@@ -9,6 +9,7 @@ const prefix = `${packagePrefix}-${componentPrefix}`;
 
 interface ButtonProps {
   children?: React.ReactNode,
+  className? : string,
   type?: string,
   color?: string,
   size?: string,
@@ -20,6 +21,7 @@ interface ButtonProps {
 
 const Button: React.FunctionComponent<ButtonProps> = (props) => {
   const {
+    className,
     type,
     color,
     size,
@@ -30,7 +32,7 @@ const Button: React.FunctionComponent<ButtonProps> = (props) => {
   } = props;
   console.log(props, restProps);
   return (
-    <button {...restProps}  className={classnames(`${classnames(prefix)}-${size}`, `${classnames(prefix)}-${color}`)}>
+    <button {...restProps}  className={classnames(`${classnames(prefix)}-${size}`, `${classnames(prefix)}-${color}`, className)}>
       <span>{props.children}</span>
     </button>
   )

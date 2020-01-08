@@ -6,10 +6,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-width: 15em;
+  z-index: 1;
+  min-width: 20em;
   border-radius: 4px;
   background: $primary-color;
   &-mask {
+    z-index: 1;
     position: fixed;
     top: 0;
     left: 0;
@@ -24,11 +26,15 @@
   }
   &-main {
     padding: 8px 16px;
-    min-height: 80px;
+    min-height: 100px;
   }
   &-footer {
     padding: 8px 16px;
     border-top: 1px solid grey;
+    text-align: right;
+    & > :not(:first-child) {
+      margin-left: $margin;
+    }
   }
   &-close {
     position: absolute;
