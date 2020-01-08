@@ -7,7 +7,7 @@ import './button.scss';
 const componentPrefix = 'button';
 const prefix = `${packagePrefix}-${componentPrefix}`;
 
-interface Props {
+interface ButtonProps {
   children?: React.ReactNode,
   type?: string,
   color?: string,
@@ -15,9 +15,10 @@ interface Props {
   disabled?: boolean,
   icon?: string,
   loading?: boolean,
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-const Button: React.FunctionComponent<Props> = (props) => {
+const Button: React.FunctionComponent<ButtonProps> = (props) => {
   const {
     type,
     color,
@@ -29,7 +30,7 @@ const Button: React.FunctionComponent<Props> = (props) => {
   } = props;
   console.log(props, restProps);
   return (
-    <button className={classnames(`${classnames(prefix)}-${size}`, `${classnames(prefix)}-${color}`)}>
+    <button {...restProps}  className={classnames(`${classnames(prefix)}-${size}`, `${classnames(prefix)}-${color}`)}>
       <span>{props.children}</span>
     </button>
   )

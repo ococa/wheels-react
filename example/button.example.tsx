@@ -5,7 +5,8 @@ import {Button} from 'lib/index';
 const ButtonExample: React.FunctionComponent = () => {
   return (
     <div>
-      <Button size={'small'}>123</Button>
+
+      <Button onClick={() => {alert('123')}} size={'small'}>123</Button>
       <Button size={'medium'}>123</Button>
       <Button size={'large'}>123</Button>
 
