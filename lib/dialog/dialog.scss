@@ -1,13 +1,14 @@
-@import 'theme';
+@import "../theme/theme.scss";
+@import "../theme/variables.scss";
 
-.cuu-dialog {
+.#{$package-prefix}-dialog {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   min-width: 15em;
   border-radius: 4px;
-  background: $main-color;
+  background: $primary-color;
   &-mask {
     position: fixed;
     top: 0;

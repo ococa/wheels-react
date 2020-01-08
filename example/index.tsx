@@ -22,7 +22,7 @@ ReactDOM.render(
           <li><Link to={'/button'}>button</Link></li>
         </ul>
       </aside>
-      <main>
+      <main style={{ padding: '20px', border: '1px solid grey' }}>
         <Route path='/icon' component={IconExample} />
         <Route path='/button' component={ButtonExample} />
         <Route path='/dialog' component={DialogExample} />

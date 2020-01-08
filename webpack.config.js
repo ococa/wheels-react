@@ -10,11 +10,11 @@ module.exports = {
     libraryTarget: 'umd',
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx', 'scss'],
     alias: {
-      'lib':  path.resolve(__dirname, 'lib'),
-      'example':  path.resolve(__dirname, 'example'),
-      'theme': path.resolve(__dirname, 'lib/theme/theme.scss'),
+      'lib':  path.resolve(__dirname, './lib'),
+      'example':  path.resolve(__dirname, './example'),
+      'theme': path.resolve(__dirname, './lib/theme'),
     }
   },
   module: {

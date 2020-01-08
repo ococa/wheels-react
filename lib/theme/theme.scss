@@ -1,1 +1,43 @@
-$main-color: #1890ff;
+$default-color: #e0e0e0;
+$default-color-hover: #d5d5d5;
+$border-default-color: 1px solid $default-color;
+$border-default-color-hover: 1px solid $default-color-hover;
+
+$primary-color: #1972d6;
+$primary-color-hover: #195293;
+$border-primary-color: 1px solid $primary-color;
+$border-primary-color-hover: 1px solid $primary-color-hover;
+
+
+$secondary-color: #DC004E;
+$secondary-color-hover: #9A0036;
+$border-secondary-color: 1px solid $secondary-color;
+$border-secondary-color-hover: 1px solid $secondary-color-hover;
+
+$font-color-black: #000000;
+$font-color-white: #ffffff;
+
+$margin: 8px;
+$padding-small: 4px 12px;
+$padding-medium: 6px 18px;
+$padding-large: 8px 24px;
+
+$height-small: 22px;
+$height-medium: 27px;
+$height-large: 26px;
+
+$min-width-small: 2.5 * $height-small;
+$min-width-medium: 2.5 * $height-medium;
+$min-width-large: 2.5 * $height-large;
+
+$font-size-small: 13px;
+$font-size-medium: 14px;
+$font-size-large: 15px;
+
+$border-radius-small: 2px;
+$border-radius-medium: 4px;
+$border-radius-large: 6px;
+
+$box-shadows: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+$box-shadows-hover: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+

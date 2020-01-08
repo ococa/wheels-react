@@ -1,4 +1,6 @@
-[class^=cuu-] {
+@import "./theme/variables";
+
+[class^=#{$package-prefix}-] {
   box-sizing: border-box;
   &::after, &::before {
     box-sizing: border-box;

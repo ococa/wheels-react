@@ -1,5 +1,11 @@
 import React from 'react';
 import P from 'prop-types';
+import classnames from '../helper/classnames';
+import { packagePrefix, sizes, colors } from '../variables';
+import './button.scss';
+
+const componentPrefix = 'button';
+const prefix = `${packagePrefix}-${componentPrefix}`;
 
 interface Props {
   children?: React.ReactNode,
@@ -21,16 +27,18 @@ const Button: React.FunctionComponent<Props> = (props) => {
     icon,
     loading, ...restProps
   } = props;
-  console.log(restProps);
+  console.log(props, restProps);
   return (
-    <button className={props.type}>{props.children}</button>
+    <button className={classnames(`${classnames(prefix)}-${size}`, `${classnames(prefix)}-${color}`)}>
+      <span>{props.children}</span>
+    </button>
   )
 };
 
 Button.propTypes = {
   type: P.oneOf(['text', 'outlined', 'contained']),
-  color: P.oneOf(['primary', 'secondary']),
-  size: P.oneOf(['normal', 'large', 'small']),
+  color: P.oneOf(colors),
+  size: P.oneOf(sizes),
   disabled: P.bool,
   children: P.node,
   icon: P.string,
@@ -38,8 +46,9 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  size: 'normal',
-  type: '',
+  size: 'medium',
+  type: 'contained',
+  color: 'default',
   disabled: false,
   loading: false,
 };

@@ -1,0 +1,86 @@
+@import "../theme/variables.scss";
+@import "../theme/theme.scss";
+
+$component-prefix: 'button';
+$prefix: $package-prefix + '-' + $component-prefix;
+
+.base-button {
+  cursor: pointer;
+  outline: none;
+  transition: background 0.5s, border 0.5s;
+  box-shadow: $box-shadows;
+  &:hover {
+    box-shadow: $box-shadows-hover;
+  }
+}
+
+[class^=#{$prefix}-] {
+  @extend .base-button
+}
+
+.base-primary {
+  background: $primary-color;
+  color: $font-color-white;
+  border: $border-primary-color;
+  &:hover {
+    border: $border-primary-color-hover;
+    background: $primary-color-hover;
+  }
+}
+
+.base-secondary {
+  background: $secondary-color;
+  color: $font-color-white;
+  border: $border-secondary-color;
+  &:hover {
+    border: $border-secondary-color-hover;
+    background: $secondary-color-hover;
+  }
+}
+
+.base-default {
+  background: $default-color;
+  color: $font-color-black;
+  border: $border-default-color;
+  &:hover {
+    border: $border-default-color-hover;
+    background: $default-color-hover;
+  }
+}
+
+.base-disabled {
+
+}
+
+.#{$prefix} {
+  &-medium {
+    min-width: $min-width-medium;
+    padding: $padding-medium;
+    border-radius: $border-radius-medium;
+    font-size: $font-size-medium;
+
+  }
+  &-small {
+    min-width: $min-width-small;
+    padding: $padding-small;
+    border-radius: $border-radius-small;
+    font-size: $font-size-small;
+  }
+  &-large {
+    min-width: $min-width-large;
+    padding: $padding-large;
+    border-radius: $border-radius-large;
+    font-size: $font-size-large;
+
+  }
+  &-primary {
+    @extend .base-primary;
+  }
+  &-secondary {
+    @extend .base-secondary;
+  }
+  &-default {
+    @extend .base-default;
+  }
+}
+
