@@ -2,9 +2,6 @@ import React from 'react'
 import {sc} from "./_utils";
 import classnames from "../helper/classnames";
 
-/**
- * Created by wangc on 2020/1/9
- */
 
 export interface Props extends React.HTMLAttributes<HTMLElement>{
 }

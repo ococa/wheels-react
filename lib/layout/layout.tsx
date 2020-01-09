@@ -4,9 +4,6 @@ import './layout.scss';
 import classnames from "../helper/classnames";
 import Aside from "./aside";
 
-/**
- * Created by wangc on 2020/1/9
- */
 
 export interface Props extends React.HTMLAttributes<HTMLElement>{
   children: ReactElement | Array<ReactElement>
@@ -31,7 +28,8 @@ const Layout: React.FunctionComponent<Props> = (props) => {
   // }, false);
 
   // 3. 第三种方式，some
-  const hasAside = (props.children as Array<ReactElement>).some(node => node.type === Aside);
+  const hasAside = 'length' in props.children &&
+    (props.children as Array<ReactElement>).some(node => node.type === Aside);
   return (
     <div className={classnames(sc(), (hasAside && sc('has-aside')), className)} {...restProps}>
       { props.children }

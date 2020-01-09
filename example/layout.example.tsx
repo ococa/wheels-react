@@ -1,14 +1,8 @@
 import React from 'react'
-import Layout from "../lib/layout/layout";
-import Content from "../lib/layout/content";
-import Header from "../lib/layout/header";
-import Footer from "../lib/layout/footer";
-import Aside from "../lib/layout/aside";
-import './layout.example.scss';
 
-/**
- * Created by wangc on 2020/1/9
- */
+import './layout.example.scss';
+import {Aside, Content, Footer, Header, Layout} from "../lib";
+
 
 export interface Props {
 
