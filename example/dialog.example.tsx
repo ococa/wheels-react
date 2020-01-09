@@ -10,7 +10,7 @@ const DialogExample = () => {
     const close = modal(
       <div>
         <h1>confirm modal</h1>
-        <button onClick={() => close()}>close </button>
+        <Button onClick={() => { close() }}>close </Button>
       </div>
     );
     console.log(close)
@@ -19,7 +19,7 @@ const DialogExample = () => {
     <>
       <div>
         <Button onClick={() => setX(!x)}>!click</Button>
-        <Dialog onClose={() => setX(!x)} visible={x}>
+        <Dialog title={'title123'} onOk={() => setX(!x)} onCancel={() => setX(!x)} onClose={() => setX(!x)} visible={x}>
           1111
         </Dialog>
       </div>

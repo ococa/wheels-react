@@ -30,7 +30,6 @@ const Button: React.FunctionComponent<ButtonProps> = (props) => {
     icon,
     loading, ...restProps
   } = props;
-  console.log(props, restProps);
   return (
     <button {...restProps}  className={classnames(`${classnames(prefix)}-${size}`, `${classnames(prefix)}-${color}`, className)}>
       <span>{props.children}</span>

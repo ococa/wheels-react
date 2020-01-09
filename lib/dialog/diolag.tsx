@@ -16,6 +16,7 @@ interface Props {
   onOk?: React.MouseEventHandler<HTMLButtonElement>;
   closeOnClickMask?: boolean,
   isShowFooter?: boolean,
+  title?: string,
 }
 
 const Dialog: React.FunctionComponent<Props> = (props) => {
@@ -31,18 +32,16 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
 
   const { onOk, onCancel } = props;
 
-  const x = (
+  const portalComponent = (
     props.visible &&
     <>
-      <div className={sc('mask')} onClick={onCLickMask}>
-
-      </div>
+      <div className={sc('mask')} onClick={onCLickMask} />
       <div className={sc()}>
         <div className={sc('close')} onClick={onClickClose}>
           <Icon name='close' />
         </div>
         <header className={sc('header')}>
-          dialog
+          {props.title}
         </header>
         <main className={sc('main')}>
           { props.children }
@@ -60,91 +59,41 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
   );
 
   return ReactDOM.createPortal(
-    x, document.body
+    portalComponent, document.body
   )
 };
 
 Dialog.defaultProps = {
   closeOnClickMask: true,
   isShowFooter: true,
+  title: 'default title'
 };
 
-const x = (content: any, yes: () => void, no: () => {}) => {
+const createPortal = (type: string, content: any, yes?: () => void, no?: () => void) => {
   const onClose = () => {
     ReactDOM.render(React.cloneElement(component, { visible: false }), div);
     ReactDOM.unmountComponentAtNode(div);
     div.remove();
   };
+  let onYes = onClose;
+  let onNo = onClose;
+  if (type === 'CONFIRM') {
+    onYes = () => {
+      onClose();
+      yes && yes();
+    };
+    onNo = () => {
+      onClose();
+      no && no();
+    };
+  }
   const component = (
     <Dialog
       visible={true}
       onClose={onClose}
-      isShowFooter={false}
-    >
-      {content}
-    </Dialog>
-  );
-  const div = document.createElement('div');
-  document.body.appendChild(div);
-  ReactDOM.render(component, div);
-};
-
-const alert = (content: string) => {
-  const onClose = () => {
-    ReactDOM.render(React.cloneElement(component, { visible: false }), div);
-    ReactDOM.unmountComponentAtNode(div);
-    div.remove();
-  };
-  const component = (
-    <Dialog
-      isShowFooter={false}
-      visible={true}
-      onClose={onClose}
-    >
-      {content}
-    </Dialog>
-
-  );
-  const div = document.createElement('div');
-  document.body.appendChild(div);
-  ReactDOM.render(component, div);
-};
-
-const confirm = (content: string, yes: () => void, no: () => void) => {
-  const onClose = () => {
-    ReactDOM.render(React.cloneElement(component, { visible: false }), div);
-    ReactDOM.unmountComponentAtNode(div);
-    div.remove();
-  };
-  const onYes = () => {
-    onClose();
-    yes && yes();
-  };
-  const onNo = () => {
-    onClose();
-    no && no();
-  };
-  const component = (
-    <Dialog visible={true} onClose={onClose} onCancel={onNo} onOk={onYes}>
-      {content}
-    </Dialog>
-  );
-  const div = document.createElement('div');
-  document.body.appendChild(div);
-  ReactDOM.render(component, div);
-};
-
-const modal = (content: ReactNode | ReactFragment) => {
-  const onClose = () => {
-    ReactDOM.render(React.cloneElement(component, { visible: false }), div);
-    ReactDOM.unmountComponentAtNode(div);
-    div.remove();
-  };
-  const component = (
-    <Dialog
-      visible={true}
-      onClose={onClose}
-      isShowFooter={false}
+      isShowFooter={type === 'CONFIRM'}
+      onCancel={onNo}
+      onOk={onYes}
     >
       {content}
     </Dialog>
@@ -153,6 +102,18 @@ const modal = (content: ReactNode | ReactFragment) => {
   document.body.appendChild(div);
   ReactDOM.render(component, div);
   return onClose;
+};
+
+const alert = (content: string) => {
+  return createPortal('ALERT', content);
+};
+
+const confirm = (content: string, yes: () => void, no: () => void) => {
+  return createPortal('CONFIRM', content, yes, no);
+};
+
+const modal = (content: ReactNode | ReactFragment) => {
+  return createPortal('MODAL', content);
 };
 
 export default Dialog;
