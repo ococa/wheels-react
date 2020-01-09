@@ -1,0 +1,24 @@
+@import "../theme/variables.scss";
+@import "../theme/theme.scss";
+
+$component-prefix: 'layout';
+$prefix: $package-prefix + '-' + $component-prefix;
+
+.#{$prefix} {
+  display: flex;
+  flex-direction: column;
+  & &, &-content {
+    flex-grow: 1;
+  }
+  & & {
+    flex-direction: row;
+  }
+  &-has-aside {
+    flex-direction: row;
+    .#{$prefix} {
+      flex-direction: column;
+    }
+  }
+}
+
+
