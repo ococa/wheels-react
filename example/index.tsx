@@ -15,7 +15,7 @@ ReactDOM.render(
     </header>
     <div>
       <aside>
-        <h2>start</h2>
+        <h2>hhh</h2>
         <ul>
           <li><Link to={'/icon'}>icon</Link></li>
           <li><Link to={'/dialog'}>dialog</Link></li>
