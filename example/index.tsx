@@ -2,18 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter as Router, Route, NavLink } from 'react-router-dom';
 import logo from './logo.png';
-
-import IconExample from './icon.example';
-import ButtonExample from './button.example';
-import DialogExample from './dialog.example';
-import LayoutExample from './layout.example';
-import Layout from "../lib/layout/layout";
-import Header from "../lib/layout/header";
-import Aside from "../lib/layout/aside";
-import Content from "../lib/layout/content";
-import Footer from "../lib/layout/footer";
-
 import './index.scss';
+import {Content, Layout, Aside, Header, Footer} from "../lib";
+import IconDemo from "./exapmle/icon/icon.demo";
+import DialogDemo from "./exapmle/dialog/dialog.demo";
+import LayoutDemo from "./exapmle/laytout/layout.demo";
+import ButtonDemo from "./exapmle/button/button.demo";
+
 
 ReactDOM.render(
   <Router>
@@ -28,7 +23,7 @@ ReactDOM.render(
       {/*center*/}
       <Layout>
         <Aside className={'site-nav-wrapper'}>
-          <h2 className={'com'}>Component</h2>
+          <h2 className={'nav-title-h2'}>UI for React</h2>
           <ul>
             <li><NavLink to={'/icon'}>icon</NavLink></li>
             <li><NavLink to={'/dialog'}>dialog</NavLink></li>
@@ -38,10 +33,10 @@ ReactDOM.render(
         </Aside>
         <Layout className={'site-main-wrapper'}>
           <Content className={'site-main-content-wrapper'}>
-            <Route path='/icon' component={IconExample} />
-            <Route path='/button' component={ButtonExample} />
-            <Route path='/dialog' component={DialogExample} />
-            <Route path='/layout' component={LayoutExample} />
+            <Route path='/icon' component={IconDemo} />
+            <Route path='/button' component={ButtonDemo} />
+            <Route path='/dialog' component={DialogDemo} />
+            <Route path='/layout' component={LayoutDemo} />
           </Content>
         </Layout>
       </Layout>

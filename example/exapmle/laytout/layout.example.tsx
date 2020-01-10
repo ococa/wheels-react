@@ -1,8 +1,7 @@
 import React from 'react'
 
 import './layout.example.scss';
-import {Aside, Content, Footer, Header, Layout} from "../lib";
-
+import {Aside, Content, Footer, Header, Layout} from 'lib';
 
 export interface Props {
 

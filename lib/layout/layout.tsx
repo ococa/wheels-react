@@ -11,7 +11,6 @@ export interface Props extends React.HTMLAttributes<HTMLElement>{
 
 const Layout: React.FunctionComponent<Props> = (props) => {
   const { className, ...restProps } = props;
-  console.log(props.children);
   // 1. 第一种方式，添加标记
   // let hasAside = undefined;
   // (props.children as Array<ReactElement>).map(node => {

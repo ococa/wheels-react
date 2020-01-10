@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button} from 'lib/index';
+import {Button} from 'lib';
 
 
 const ButtonExample: React.FunctionComponent = () => {
@@ -11,7 +11,6 @@ const ButtonExample: React.FunctionComponent = () => {
       <Button size={'large'}>123</Button>
 
       <Button color={'secondary'} size={'small'}>123</Button>
-      <Button color={'123123'} size={'small'}>123</Button>
       <Button color={'secondary'} size={'medium'}>123</Button>
       <Button color={'secondary'} size={'large'}>123</Button>
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Dialog } from 'lib/index';
-import { alert, confirm, modal } from "../lib/dialog/diolag";
+import { Button, Dialog } from 'lib';
+import { alert, confirm, modal } from "../../../lib/dialog/diolag";
 
 
 const DialogExample = () => {

@@ -65,6 +65,11 @@ h1, h2, h3, h4, h5, h6 { font-weight: normal; };
   }
 }
 
+.nav-title-h2 {
+  padding: 20px 40px;
+  color: #2b81af;
+}
+
 .site-main-wrapper {
   width: calc(100% - 200px);
   .site-main-content-wrapper {

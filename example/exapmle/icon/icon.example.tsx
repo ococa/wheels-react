@@ -1,11 +1,11 @@
 import React from 'react';
-import { Icon } from 'lib/index';
+import { Icon } from 'lib';
 
 
 const IconExample: React.FunctionComponent = () => {
   return (
     <div>
-      <Icon name={'alipay'} />
+      <Icon name={'wechat'} />
     </div>
   )
 };
