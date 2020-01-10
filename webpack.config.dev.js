@@ -10,7 +10,7 @@ module.exports = Object.assign({}, base, {
   plugins: [
     new HtmlWebpackPlugin({
       title: "cuu",
-      template: "index.html"
+      template: "example.html"
     })
   ],
   devServer: {
