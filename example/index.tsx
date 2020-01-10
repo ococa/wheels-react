@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route, NavLink } from 'react-router-dom';
 import logo from './logo.png';
 
 import IconExample from './icon.example';
@@ -13,29 +13,31 @@ import Aside from "../lib/layout/aside";
 import Content from "../lib/layout/content";
 import Footer from "../lib/layout/footer";
 
+import './index.scss';
+
 ReactDOM.render(
   <Router>
-    <Layout>
+    <Layout className={'site-wrapper'}>
       {/*header*/}
-      <Header>
-        <div>
-          <img src={logo} alt="logo"/>
-          logo
+      <Header className={'site-common-header'}>
+        <div className={'header-logo'}>
+          <img style={{ height: 48, width: 48 }} src={logo} alt="logo"/>
+          <h1>cuu</h1>
         </div>
       </Header>
       {/*center*/}
       <Layout>
-        <Aside>
-          <h2>hhh</h2>
+        <Aside className={'site-nav-wrapper'}>
+          <h2 className={'com'}>Component</h2>
           <ul>
-            <li><Link to={'/icon'}>icon</Link></li>
-            <li><Link to={'/dialog'}>dialog</Link></li>
-            <li><Link to={'/button'}>button</Link></li>
-            <li><Link to={'/layout'}>layout</Link></li>
+            <li><NavLink to={'/icon'}>icon</NavLink></li>
+            <li><NavLink to={'/dialog'}>dialog</NavLink></li>
+            <li><NavLink to={'/button'}>button</NavLink></li>
+            <li><NavLink to={'/layout'}>layout</NavLink></li>
           </ul>
         </Aside>
-        <Layout>
-          <Content style={{ padding: '20px', border: '1px solid grey' }}>
+        <Layout className={'site-main-wrapper'}>
+          <Content className={'site-main-content-wrapper'}>
             <Route path='/icon' component={IconExample} />
             <Route path='/button' component={ButtonExample} />
             <Route path='/dialog' component={DialogExample} />
@@ -45,8 +47,11 @@ ReactDOM.render(
       </Layout>
       {/*center end*/}
       {/*footer*/}
-      <Footer>
-        footer
+      <Footer className={'site-common-footer'}>
+        Made with
+        <span style={{color: "rgba(0, 0, 0)"}}>🌟</span>
+        by
+        <a href="github/hhh">coca</a>
       </Footer>
     </Layout>
   </Router>,
