@@ -10,7 +10,7 @@ module.exports = Object.assign({}, base, {
   },
   output: {
     filename: '[name].js',
-    path: path.join(__dirname, 'doc'),
+    path: path.join(__dirname, 'docs'),
   },
   plugins: [
     new HtmlWebpackPlugin({

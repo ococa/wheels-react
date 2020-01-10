@@ -3,9 +3,8 @@
 /.vs
 .vscode
 
-dist
+dist/
 node_modules
-doc/
 
 # **/__snapshots__/**
 junit.xml
