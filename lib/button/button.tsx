@@ -7,10 +7,10 @@ import './button.scss';
 const componentPrefix = 'button';
 const prefix = `${packagePrefix}-${componentPrefix}`;
 
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>{
   children?: React.ReactNode,
   className? : string,
-  type?: string,
+  shape?: string,
   color?: string,
   size?: string,
   disabled?: boolean,
@@ -22,7 +22,7 @@ interface ButtonProps {
 const Button: React.FunctionComponent<ButtonProps> = (props) => {
   const {
     className,
-    type,
+    shape,
     color,
     size,
     disabled,
@@ -38,7 +38,7 @@ const Button: React.FunctionComponent<ButtonProps> = (props) => {
 };
 
 Button.propTypes = {
-  type: P.oneOf(['text', 'outlined', 'contained']),
+  shape: P.oneOf(['text', 'outlined', 'contained']),
   color: P.oneOf(colors),
   size: P.oneOf(sizes),
   disabled: P.bool,
@@ -49,7 +49,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   size: 'medium',
-  type: 'contained',
+  shape: 'contained',
   color: 'default',
   disabled: false,
   loading: false,

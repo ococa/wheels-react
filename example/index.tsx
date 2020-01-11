@@ -5,9 +5,10 @@ import logo from './logo.png';
 import './index.scss';
 import {Content, Layout, Aside, Header, Footer} from "../lib";
 import IconDemo from "./exapmle/icon/icon.demo";
-import DialogDemo from "./exapmle/dialog/dialog.demo";
 import LayoutDemo from "./exapmle/laytout/layout.demo";
 import ButtonDemo from "./exapmle/button/button.demo";
+import DialogDemo from "./exapmle/dialog/dialog.demo";
+import FormDemo from "./exapmle/form/form.demo";
 
 
 ReactDOM.render(
@@ -29,6 +30,7 @@ ReactDOM.render(
             <li><NavLink to={'/dialog'}>dialog</NavLink></li>
             <li><NavLink to={'/button'}>button</NavLink></li>
             <li><NavLink to={'/layout'}>layout</NavLink></li>
+            <li><NavLink to={'/form'}>form</NavLink></li>
           </ul>
         </Aside>
         <Layout className={'site-main-wrapper'}>
@@ -37,6 +39,7 @@ ReactDOM.render(
             <Route path='/button' component={ButtonDemo} />
             <Route path='/dialog' component={DialogDemo} />
             <Route path='/layout' component={LayoutDemo} />
+            <Route path='/form' component={FormDemo} />
           </Content>
         </Layout>
       </Layout>
@@ -46,7 +49,7 @@ ReactDOM.render(
         Made with
         <span style={{color: "rgba(0, 0, 0)"}}>🌟</span>
         by
-        <a href="github/hhh">coca</a>
+        <a href="https://ococa.github.io/wheels-react/">coca</a>
       </Footer>
     </Layout>
   </Router>,
