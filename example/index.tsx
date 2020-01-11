@@ -49,7 +49,7 @@ ReactDOM.render(
         Made with
         <span style={{color: "rgba(0, 0, 0)"}}>🌟</span>
         by
-        <a href="https://ococa.github.io/wheels-react/">coca</a>
+        <a style={{ marginLeft: '20px' }} href="https://ococa.github.io/wheels-react/">ococa</a>
       </Footer>
     </Layout>
   </Router>,
