@@ -1,0 +1,18 @@
+@import "../theme/variables.scss";
+@import "../theme/theme.scss";
+
+$component-prefix: 'input';
+$prefix: $package-prefix + '-' + $component-prefix;
+
+.#{$prefix} {
+  border: 1px solid $default-color;
+  padding: 4px 8px;
+  line-height: 22px;
+  border-radius: $border-radius-medium;
+  transition: box-shadow 0.7s;
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+    box-shadow: 0 0 0 2px fade_out($primary-color, 0.8);
+  }
+}

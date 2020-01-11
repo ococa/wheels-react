@@ -6,5 +6,6 @@ export { default as Footer } from './layout/footer';
 export { default as Content } from './layout/content';
 export { default as Aside } from './layout/aside';
 export { default as Layout } from './layout/layout';
+export { default as Input } from './input/input';
 
 import './common.scss';

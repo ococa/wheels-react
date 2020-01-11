@@ -1,5 +1,6 @@
 import React, {ReactFragment} from 'react'
 import {FormErrors} from "./validator";
+import {Input} from '../index'
 
 type Fields = {
   name: string,
@@ -43,7 +44,7 @@ const Form: React.FunctionComponent < Props > = (props) => {
         return (
           <div key={item.name}>
             <label htmlFor={item.name}>{item.label} :</label>
-            <input
+            <Input
               name={item.name}
               type={item.input.type}
               value={value[item.name]}
