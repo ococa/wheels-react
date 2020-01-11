@@ -5,7 +5,7 @@ import {Icon} from "../index";
 import { Button } from '../index';
 import {scopedClassFactory} from "../helper/classes";
 
-const scopedClass = scopedClassFactory('cuu-dialog');
+const scopedClass = scopedClassFactory('dialog');
 const sc = scopedClass;
 
 interface Props {

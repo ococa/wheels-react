@@ -1,4 +1,8 @@
-function scopedClassFactory(prefix: string) {
+import {packagePrefix} from "../variables";
+
+function scopedClassFactory(componentprefix: string) {
+  const prefix = `${packagePrefix}-${componentprefix}`;
+
   return function(name?: string) {
     return [prefix, name].filter(Boolean).join('-');
   }

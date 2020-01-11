@@ -1,8 +1,6 @@
-import {packagePrefix} from "../variables";
 import {scopedClassFactory} from "../helper/classes";
 
 const componentPrefix = 'layout';
-const prefix = `${packagePrefix}-${componentPrefix}`;
-const sc = scopedClassFactory(prefix);
+const sc = scopedClassFactory(componentPrefix);
 
 export { sc };
