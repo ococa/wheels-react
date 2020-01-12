@@ -12,7 +12,7 @@ const FormExample = () => {
   const [errors, setErrors] = useState({});
   const [fields] = useState([
     { name: 'username', label: 'username', input: { type: 'text' }},
-    { name: 'password', label: 'password', input: { type: 'text' }},
+    { name: 'password', label: 'passwordpa', input: { type: 'text' }},
   ]);
   const onSubmitForm = () => {
     const rules = [

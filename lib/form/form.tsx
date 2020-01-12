@@ -1,6 +1,15 @@
 import React, {ReactFragment} from 'react'
 import {FormErrors} from "./validator";
 import {Input} from '../index'
+import './form.scss';
+import {scopedClassFactory} from "../helper/classes";
+import classnames from "../helper/classnames";
+
+// import
+const componentPrefix = 'form';
+
+const scopedClass = scopedClassFactory(componentPrefix);
+const sc = scopedClass;
 
 type Fields = {
   name: string,
@@ -39,22 +48,40 @@ const Form: React.FunctionComponent < Props > = (props) => {
   return (
     <form
       onSubmit={onSubmit}
+      className={sc('')}
     >
-      {fields.map(item => {
-        return (
-          <div key={item.name}>
-            <label htmlFor={item.name}>{item.label} :</label>
-            <Input
-              name={item.name}
-              type={item.input.type}
-              value={value[item.name]}
-              onChange={onInputChange}
-            />
-            {<p>{props.errors[item.name]}</p>}
-          </div>
-        )
-      })}
-      {props.buttons}
+      <table>
+        <tbody>
+          {fields.map(item => {
+          return (
+              <tr
+                key={item.name}
+                className={sc('row')}
+              >
+                <td className={classnames(sc('label-wrapper'), sc('td'))}>
+                  <label htmlFor={item.name}>{item.label} :</label>
+                </td>
+                <td className={classnames(sc('td'), sc('input-wrapper'))}>
+                  <Input
+                    name={item.name}
+                    type={item.input.type}
+                    value={value[item.name]}
+                    onChange={onInputChange}
+                  />
+                </td>
+                <td className={sc('td')}>
+                  {<p>{props.errors[item.name]}</p>}
+                </td>
+              </tr>
+          )
+        })}
+        <tr className={sc('buttons')}>
+          <td className={classnames(sc('label-wrapper'), sc('td'))}>{}</td>
+          <td className={classnames(sc('td'), sc('input-wrapper'))}>{props.buttons}</td>
+        </tr>
+        </tbody>
+      </table>
+
     </form>
   )
 };

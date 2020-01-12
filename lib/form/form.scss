@@ -1,0 +1,18 @@
+@import "../theme/variables.scss";
+@import "../theme/theme.scss";
+
+$component-prefix: 'form';
+$prefix: $package-prefix + '-' + $component-prefix;
+
+.#{$prefix} {
+   &-td {
+    padding-bottom: 32px;
+  }
+  &-row:last-child &-td {
+    padding-bottom: 0;
+  }
+
+  &-label-wrapper + &-input-wrapper {
+    padding-left: 16px;
+  }
+}
