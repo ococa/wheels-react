@@ -5,14 +5,23 @@ $component-prefix: 'form';
 $prefix: $package-prefix + '-' + $component-prefix;
 
 .#{$prefix} {
-   &-td {
+  &-table {
+    border-collapse: collapse;
+  }
+  &-td {
+    vertical-align: top;
     padding-bottom: 32px;
   }
   &-row:last-child &-td {
     padding-bottom: 0;
   }
-
   &-label-wrapper + &-input-wrapper {
     padding-left: 16px;
+  }
+
+  &-errors {
+    color: $error-color;
+    padding-top: 2px;
+    font-size: 0.8em;
   }
 }

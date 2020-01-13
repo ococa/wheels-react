@@ -24,13 +24,14 @@ export interface FormValue {
 }
 
 export interface Props {
-  value: FormValue,
-  fields: Array<Fields>,
-  buttons: ReactFragment,
-  onSubmit: React.FormEventHandler<HTMLFormElement>,
+  value: FormValue;
+  fields: Array<Fields>;
+  buttons: ReactFragment;
+  onSubmit: React.FormEventHandler<HTMLFormElement>;
   onChange: (value: FormValue) => void;
-  errors: FormErrors,
+  errors: FormErrors;
   onErrors?: (value: FormErrors) => void;
+  errorDisplayMode?: 'first' | 'all'; // 错误展示, first展示第一个错误
 }
 
 const Form: React.FunctionComponent < Props > = (props) => {
@@ -50,7 +51,7 @@ const Form: React.FunctionComponent < Props > = (props) => {
       onSubmit={onSubmit}
       className={sc('')}
     >
-      <table>
+      <table className={sc('table')}>
         <tbody>
           {fields.map(item => {
           return (
@@ -59,7 +60,7 @@ const Form: React.FunctionComponent < Props > = (props) => {
                 className={sc('row')}
               >
                 <td className={classnames(sc('label-wrapper'), sc('td'))}>
-                  <label htmlFor={item.name}>{item.label} :</label>
+                  <label htmlFor={item.name}>{item.label}:</label>
                 </td>
                 <td className={classnames(sc('td'), sc('input-wrapper'))}>
                   <Input
@@ -68,10 +69,13 @@ const Form: React.FunctionComponent < Props > = (props) => {
                     value={value[item.name]}
                     onChange={onInputChange}
                   />
+                  {
+                    props.errorDisplayMode === 'first' ?
+                    <p className={sc('errors')}>{props.errors[item.name]?.shift()}</p> :
+                    <p className={sc('errors')}>{props.errors[item.name]?.join(',')}</p>
+                  }
                 </td>
-                <td className={sc('td')}>
-                  {<p>{props.errors[item.name]}</p>}
-                </td>
+
               </tr>
           )
         })}
@@ -84,6 +88,10 @@ const Form: React.FunctionComponent < Props > = (props) => {
 
     </form>
   )
+};
+
+Form.defaultProps = {
+  errorDisplayMode: 'first',
 };
 
 export default Form;
