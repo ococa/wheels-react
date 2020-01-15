@@ -6,6 +6,8 @@ interface FormRule {
   minLength?: number,
   maxLength?: number,
   pattern?: RegExp,
+  validator?: (value: string) => Promise<any>
+  // validator?: () => {},
 }
 
 type FormRules = Array<FormRule>
@@ -18,7 +20,7 @@ function isEmpty(value: any) {
   return value === '' || value === null || value === undefined;
 }
 
-const validator = (formValue: FormValue, rules: FormRules): FormErrors => {
+const validator = (formValue: FormValue, rules: FormRules, callback?: () => void): FormErrors => {
   let errors: any = {};
   const addError = (key: string, message: string) => {
     if (errors[key] === undefined) {
@@ -29,6 +31,9 @@ const validator = (formValue: FormValue, rules: FormRules): FormErrors => {
   rules.map(rule => {
     const key = rule.key;
     const value = formValue[key];
+    if (rule.validator) { // 自定义校验
+      rule.validator(rule.key).then(callback, callback)
+    }
     if (rule.required && isEmpty(value)) {
       // @ts-ignore
       addError(rule.key, `${rule.key} is required`);
@@ -47,9 +52,9 @@ const validator = (formValue: FormValue, rules: FormRules): FormErrors => {
       if (!(rule.pattern.test(value))) {
         addError(rule.key, `${rule.key} pattern test is failed`)
       }
-    } 
-  });
-  return errors
+    }
+    });
+  return errors;
 };
 
 export default validator;

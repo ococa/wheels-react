@@ -3,6 +3,7 @@ import { Button, Dialog } from 'lib';
 import { alert, confirm, modal } from "../../../lib/dialog/diolag";
 
 
+
 const DialogExample = () => {
   const [x, setX] = useState(false);
   const [y, setY] = useState(false);
