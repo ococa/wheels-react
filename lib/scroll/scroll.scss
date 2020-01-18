@@ -6,16 +6,35 @@ $prefix: $package-prefix + '-' + $component-prefix;
 
 .#{$prefix} {
   position: relative;
-  border: 1px solid blue;
-  //overflow-x: hidden;
-
+  overflow-x: hidden;
   &-inner {
     overflow-y: auto;
-    border: 1px solid red;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
   }
+
+  &-track {
+    //border: 1px solid yellow;
+    width: 10px;
+    overflow-x: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+  }
+  &-bar {
+    height: 30px;
+    width: 80%;
+    background: #808080;
+    opacity: 0.6;
+    position: absolute;
+    border-radius: 4px;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
 }
