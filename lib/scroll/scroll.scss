@@ -1,0 +1,21 @@
+@import "../theme/variables.scss";
+@import "../theme/theme.scss";
+
+$component-prefix: 'scroll';
+$prefix: $package-prefix + '-' + $component-prefix;
+
+.#{$prefix} {
+  position: relative;
+  border: 1px solid blue;
+  //overflow-x: hidden;
+
+  &-inner {
+    overflow-y: auto;
+    border: 1px solid red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: -20px;
+    bottom: 0;
+  }
+}

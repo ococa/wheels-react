@@ -10,6 +10,7 @@ import ButtonDemo from "./exapmle/button/button.demo";
 import DialogDemo from "./exapmle/dialog/dialog.demo";
 import FormDemo from "./exapmle/form/form.demo";
 import InputDemo from "./exapmle/input/input.demo";
+import ScrollDemo from "./exapmle/scroll/scroll.demo";
 
 
 ReactDOM.render(
@@ -33,6 +34,7 @@ ReactDOM.render(
             <li><NavLink to={'/layout'}>layout</NavLink></li>
             <li><NavLink to={'/form'}>form</NavLink></li>
             <li><NavLink to={'/input'}>input</NavLink></li>
+            <li><NavLink to={'/scroll'}>scroll</NavLink></li>
           </ul>
         </Aside>
         <Layout className={'site-main-wrapper'}>
@@ -43,6 +45,7 @@ ReactDOM.render(
             <Route path='/layout' component={LayoutDemo} />
             <Route path='/form' component={FormDemo} />
             <Route path='/input' component={InputDemo} />
+            <Route path='/scroll' component={ScrollDemo} />
           </Content>
         </Layout>
       </Layout>

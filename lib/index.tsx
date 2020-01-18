@@ -7,5 +7,6 @@ export { default as Content } from './layout/content';
 export { default as Aside } from './layout/aside';
 export { default as Layout } from './layout/layout';
 export { default as Input } from './input/input';
+export { default as Scroll } from './scroll/scroll';
 
 import './common.scss';
